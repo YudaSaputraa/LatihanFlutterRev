@@ -110,15 +110,7 @@ class _main_menuState extends State<main_menu> {
                 left: 30,
                 right: 275,
                 child: Container(
-                  child: IconButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/pesan');
-                      },
-                      icon: Image.asset(
-                        "images/icons/booking.png",
-                        height: 65,
-                        width: 65,
-                      )),
+                  child: _iconButtonPesan(),
                   decoration: BoxDecoration(
                       color: Color.fromARGB(255, 65, 152, 173),
                       borderRadius: BorderRadius.circular(30)),
@@ -130,11 +122,7 @@ class _main_menuState extends State<main_menu> {
                   left: 150,
                   right: 150,
                   child: Container(
-                    child: IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, "/pembayaran");
-                        },
-                        icon: Image.asset("images/icons/card.png")),
+                    child: _iconButtonBayar(),
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 65, 152, 173),
                         borderRadius: BorderRadius.circular(30)),
@@ -145,9 +133,7 @@ class _main_menuState extends State<main_menu> {
                   left: 275,
                   right: 30,
                   child: Container(
-                    child: IconButton(
-                        onPressed: null,
-                        icon: Image.asset("images/icons/aktivitas.png")),
+                    child: _iconButtonPromo(),
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 65, 152, 173),
                         borderRadius: BorderRadius.circular(30)),
@@ -177,11 +163,11 @@ class _main_menuState extends State<main_menu> {
               Positioned.fill(
                   top: 150,
                   bottom: 10,
-                  left: 285,
+                  left: 295,
                   right: 35,
                   child: Container(
                     child: Text(
-                      "Aktivitas",
+                      "Promo",
                       style: TextStyle(fontSize: 17),
                     ),
                   )),
@@ -224,42 +210,37 @@ class _main_menuState extends State<main_menu> {
     );
   }
 
-  Widget _textbuttonsingaraja() {
+  Widget _iconButtonPesan() {
     return Container(
-      child: TextButton(
+      child: IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/kost_singaraja');
+            Navigator.pushNamed(context, '/pesan');
           },
-          child: Text(
-            "Kost Singaraja\n Rp 800.000/bln",
-            style: TextStyle(fontSize: 17, color: Colors.black),
+          icon: Image.asset(
+            "images/icons/booking.png",
+            height: 65,
+            width: 65,
           )),
     );
   }
 
-  Widget _textbuttonangga() {
+  Widget _iconButtonBayar() {
     return Container(
-      child: TextButton(
+      child: IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/kost_angga');
+            Navigator.pushNamed(context, "/pembayarann");
           },
-          child: Text(
-            "Kost Angga\n Rp 750.000/bln",
-            style: TextStyle(fontSize: 17, color: Colors.black),
-          )),
+          icon: Image.asset("images/icons/card.png")),
     );
   }
 
-  Widget _textbuttonsultan() {
+  Widget _iconButtonPromo() {
     return Container(
-      child: TextButton(
+      child: IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/kost_sultan');
+            Navigator.pushNamed(context, "/promo");
           },
-          child: Text(
-            "Kost Sultan\n Rp 1.500.000/bln",
-            style: TextStyle(fontSize: 17, color: Colors.black),
-          )),
+          icon: Image.asset("images/icons/tag.png")),
     );
   }
 }

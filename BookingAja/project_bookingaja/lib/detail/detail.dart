@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:project_bookingaja/dataa/data.dart';
+import 'package:project_bookingaja/pembayaran.dart';
 
 class IsiData extends StatelessWidget {
   final DataKost dataa;
@@ -58,13 +58,14 @@ class IsiData extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    height: 400,
+                    height: 370,
                     width: 400,
                   ),
                   Positioned.fill(
+                      top: 10,
                       left: 10,
                       right: 90,
-                      bottom: 350,
+                      bottom: 320,
                       child: Container(
                         child: Row(
                           children: [
@@ -81,7 +82,7 @@ class IsiData extends StatelessWidget {
                       )),
                   Positioned.fill(
                       top: 50,
-                      bottom: 290,
+                      bottom: 250,
                       left: 30,
                       child: Container(
                         child: Text(
@@ -93,8 +94,8 @@ class IsiData extends StatelessWidget {
                       )),
                   Positioned.fill(
                       left: 10,
-                      top: 130,
-                      bottom: 220,
+                      top: 140,
+                      bottom: 200,
                       child: Container(
                         child: Row(
                           children: [
@@ -106,23 +107,48 @@ class IsiData extends StatelessWidget {
                             ),
                           ],
                         ),
-                        height: 50,
+                        height: 100,
                         width: 400,
                       )),
                   Positioned.fill(
                       top: 180,
-                      bottom: 10,
                       left: 30,
+                      bottom: 10,
                       child: Container(
                         child: Text(
                           dataa.fasilitas,
                           style: TextStyle(fontSize: 15),
                         ),
-                        height: 50,
+                        height: 10,
                         width: 400,
                       )),
                 ],
-              )
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Center(
+                child: Container(
+                  height: 45,
+                  width: 300,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      final data2 = dataa;
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Pembayaran(dataa: data2);
+                      }));
+                    },
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        primary: Color.fromARGB(255, 60, 156, 64)),
+                    child: Text("Pesan Sekarang",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+              ),
             ],
           ),
         ],

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_bookingaja/daftar.dart';
-import 'package:project_bookingaja/main_menu.dart';
-import 'package:project_bookingaja/masuk.dart';
-import 'package:project_bookingaja/pembayaran.dart';
+import 'package:project_bookingaja/pembayaran2.dart';
 import 'package:project_bookingaja/pesan.dart';
-import 'detail/detail.dart';
+import 'package:project_bookingaja/promo.dart';
 import 'daftar.dart';
 
 void main() {
@@ -27,7 +25,8 @@ class _MyAppState extends State<MyApp> {
         routes: {
           '/daftar': (context) => daftar(),
           '/pesan': (context) => pesan(),
-          '/pembayaran': (context) => pembayaran(),
+          '/promo': (context) => Promo(),
+          '/pembayarann': (context) => pembayarann()
         });
   }
 }
